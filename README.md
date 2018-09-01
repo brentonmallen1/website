@@ -1,2 +1,2 @@
-# website
-My personal website
+# My Personal Website
+https://www.brentonmallen.com
