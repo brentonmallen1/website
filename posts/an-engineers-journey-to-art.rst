@@ -1,14 +1,12 @@
 .. title: An Engineer's Journey to Art (so far)
 .. slug: engineers-journey-art
 .. date: 2015-10-20 01:54:46 UTC-04:00
-.. tags: art,hobbies
-.. category: hobbies
+.. tags: data science
+.. category: data science
 .. link:
 .. description:
 .. type: text
 
-# TODO reduce image sizes
-~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I am currently a Data Scientist but my degrees are in Ocean Engineering
 with a focus in underwater acoustic signal and image processing.  I
