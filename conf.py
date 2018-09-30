@@ -136,20 +136,28 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
-        (("/pages/bio", "Bio"),
-        ("/files/resume/mallen_resume_2018-10-03.pdf", 'Resume'),
-        ("/pages/publications", "Publications")
-        ),
-        'About Me'
+            (
+                ("/pages/bio", "Bio"),
+                ("/files/mallen_resume_2018-09-01.pdf", 'Resume'),
+                ("/pages/publications", "Publications")
+            ),
+            'About Me'
         ),
         # ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
+            ("/categories/", "Tags"),
         (
-        (("https://github.com/brentonmallen1", "GitHub"),
-        ("https://twitter.com/BrentonMallen", "Twitter"),
-        ("https://www.linkedin.com/in/brentonmallen/", "LinkedIn"),
+            (
+                ("https://github.com/brentonmallen1", "GitHub"),
+                ("https://twitter.com/BrentonMallen", "Twitter"),
+                ("https://www.linkedin.com/in/brentonmallen/", "LinkedIn"),
+            ),
+            'Contact'
         ),
-        'Contact'
+        (
+            (
+                ('/pages/bg-sim', 'Boardgame Similarity'),
+            ),
+            'Projects'
         ),
         # ("/rss.xml", "RSS feed"),
     ),
