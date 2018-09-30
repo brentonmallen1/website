@@ -106,5 +106,5 @@ venv.bak/
 # files & directory
 output
 cache
-.doit.db
+.doit.db.db
 *.DS_Store
