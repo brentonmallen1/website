@@ -137,7 +137,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
         (("/pages/bio", "Bio"),
-        ("/files/mallen_resume_2018-09-01.pdf", 'Resume'),
+        ("/files/resume/mallen_resume_2018-10-03.pdf", 'Resume'),
         ("/pages/publications", "Publications")
         ),
         'About Me'
