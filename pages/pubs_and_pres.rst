@@ -25,3 +25,6 @@ Presentations:
 **PyData NYC 2015:**
 
 `Global Botnet Detector <https://www.slideshare.net/BrentonMallen/global-botnet-detector>`_
+
+**Triangle AI Meetup:**
+`Machine Learning as a Microservice </files/titanic/Titanic.pdf>`_
