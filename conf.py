@@ -156,6 +156,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('/pages/bg-sim', 'Boardgame Similarity'),
+                ('/pages/titanic', 'Titanic Survival')
             ),
             'Projects'
         ),
