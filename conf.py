@@ -138,7 +138,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ("/pages/bio", "Bio"),
-                ("/files/resume/mallen_cv_2020-07-08.pdf", 'Resume'),
+                ("/files/resume/mallen_cv.pdf", 'Resume'),
                 ("/pages/publications", "Publications")
             ),
             'About Me'
