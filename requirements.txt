@@ -1,7 +1,7 @@
 appnope==0.1.0
 argh==0.26.2
 backcall==0.1.0
-bleach==2.1.4
+bleach>=2.1.4
 blinker==1.4
 certifi==2018.8.24
 chardet==3.0.4
@@ -23,7 +23,7 @@ jsonschema==2.6.0
 jupyter-client==5.2.3
 jupyter-core==4.4.0
 Logbook==1.4.0
-lxml==4.2.4
+lxml>=4.2.4
 Mako==1.0.7
 Markdown==2.6.11
 MarkupSafe==1.0
@@ -45,7 +45,7 @@ prometheus-client==0.3.1
 prompt-toolkit==1.0.15
 ptyprocess==0.6.0
 pygal==2.4.0
-Pygments==2.2.0
+Pygments>=2.2.0
 Pyphen==0.9.5
 PyRSS2Gen==1.1
 python-dateutil==2.7.3
