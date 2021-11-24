@@ -6,7 +6,7 @@ date = 2021-11-14T21:20:34-05:00
 {{< rawhtml >}}
 
 <!-- Add JS to handle light and dark modes -->
-<script src="/js/coder.js" ></script>
+<script src="js/coder.js" ></script>
 
 <!-- Add iframe to house pdf -->
   <iframe src="/about/resume.pdf" frameborder="0"
