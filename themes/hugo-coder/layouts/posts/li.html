@@ -1,0 +1,10 @@
+<li>
+  <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+  <a class="title"
+     href="{{ .Params.externalLink | default .RelPermalink }}">
+    {{ .Title }}
+    <!-- Add description as a sub title -->
+    <pre> {{ .Description }}</pre>
+    <br>
+  </a>
+</li>

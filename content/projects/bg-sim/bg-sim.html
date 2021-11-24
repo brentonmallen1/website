@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Objective Board Game Similarity</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/projects/bg-sim/bg-sim-script.js"></script>
+    </head>
+
+    <style>
+        input[type=text], select {
+          <!--width: 100%;-->
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background: transparent;
+          mix-blend-mode: difference;
+        }
+        input[type=number], select {
+          <!--width: 100%;-->
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background: transparent;
+          mix-blend-mode: difference;
+        }
+
+        input[type=submit] {
+          width: 25%;
+          align: center;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+    </style>
+
+    <body>
+        <!-- FORM FOR BGG ID NUMBER INPUT -->
+        <div class="container">
+            <p class="form">
+                <form
+                        action="https://nqluu8bsoi.execute-api.us-east-1.amazonaws.com/dev/bg_similarity" method="POST"
+                      enctype="multipart/form-data">
+                    <br>
+                    Input BoardGameGeek game ID
+                    (BGG Item ID: 174430)
+                    <br>
+                    <!-- <a href="url">link text</a> -->
+                    <!-- TODO add link to page describing how to find bgg id -->
+                    <input id="bgg_id" type="text" name="bgg_id" size="64"
+                           placeholder="174430"
+                           onkeyup="check_input(this.value)"/>
+                    <br>
+                    Number of Similar Games:
+                    <select name="top_n">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input id="submit" type="submit" name="submit"/>
+                    <br>
+                    <br>
+                    Similar Games:
+                    <pre class="similar_games"></pre>
+                </form>
+                <br>
+                <p>
+                    Example Games:
+                    <ul>
+                        <li>Gloomhaven (ID: 174430)</li>
+                        <li>Agricola (Revised Ed.) (ID: 200680)</li>
+                        <li>Gaia Project (ID: 220308)</li>
+                        <li>Legendary Encounters: Alien (ID: 146652)</li>
+                        <li>Terraforming Mars (ID: 167791)</li>
+                        <li>Twilight Imperium 4th Ed. (ID: 233078)</li>
+                    </ul>
+                </p>
+            </div>
+            <!-- TODO add link to blog page with post of bgg similarities -->
+            <a href="https://github.com/brentonmallen1/boardgame_similarities">Source Code</a>
+        <hr>
+        </div>
+        <div class="container">
+            <h4><strong>Background</strong></h4>
+            Over the past few years I have become pretty obsessed with modern
+            board games.  This may sound unusual to the uninitiated but modern
+            board games have come a long way in complexity, theme and just
+            overall entertainment.  I also find that board games are a great
+            way to unplug these days and enjoy the company and conversation
+            that comes with people gathered together to play a game.  It seemed
+            only natural to combine my interest in board games with my interest in data analysis.
+
+            <h4><strong>Motivation</strong></h4>
+            The motivation behind this objective similarity service is that, while browsing
+            <a href="https://boardgamegeek.com">BoardGameGeek</a>, I often find
+            myself wanting a list of similar games. I picture this being
+            something like a new section in the side banner that has other game
+            characteristics.  I knew a potentially more useful list would be a 'recommendation
+            list' but without having direct, speedy access to the underlying database as well
+            as user ranked lists, it would very time consuming to gather the necessary data
+            for a recommendation system.  With that constraint, I opted for an objective
+            similarity system that would return a list of games that are similarity based off
+            game characteristics rather than opinion.  This is that attempt.
+            <br>
+            <br>
+            It's important to mention what this isn't - a recommendation system.  Some
+            responses may not make immediate sense as to the game relation but under the
+            confines of the game characteristics used, there may be more apparent
+            similarities.  This isn't to say that the system is always correct, far from it,
+            it's just that the results might not align with expectations because one might
+            think of the games differently than the model does.
+
+            <h4><strong>Methodology</strong></h4>
+            The method being used here is quite straight forward when all is said and done.
+            This system uses Locality Sensitive Hashing to determine the similarity between
+            games.  In particular it is taking into consideration the following game
+            characteristics (as defined by BoardGameGeek):
+            <ul>
+                <li>categories</li>
+                <li>mechanics</li>
+                <li>families</li>
+                <li>designers</li>
+                <li>publishers</li>
+                <li>minimum age</li>
+                <li>minimum playtime</li>
+                <li>maximum playtime</li>
+                <li>maximum player count</li>
+            </ul>
+
+            For information around Locality Sensitive Hashing, I'd recommend this
+            <a href="https://youtu.be/bQAYY8INBxg">lecture</a> and this
+            <a href="http://unboxresearch.com/articles/lsh_post1.html">article</a>.
+            <br>
+            <br>
+            A key thing to note is that the hash table was built with data pulled on
+            2018-06-27 and contained the top 6,000 or so games (ranked according to BGG).
+            This means that the system will only be able to return similar games if they
+            were in the the top 6,000 games at the time.
+
+            <h4><strong>Future Work</strong></h4>
+            I hope to be compiling a more thorough walk through of how this
+            system was built.
+            <br>
+            I also hope to look into using the board game description along with some Natural
+            Language Processing (NLP) techniques as another approach to determining game
+            similarity.
+        </div>
+
+        <!--
+        JS function to check if the input field is an integer number, if not
+        it disables the submit command
+        -->
+        <script type="text/javascript">
+            function check_input(strValue){
+                var objRegExp  = /(^-?\d\d*$)/;
+
+                if(objRegExp.test(strValue)) {
+                    document.getElementById('submit').disabled = false;
+                    document.getElementById('submit').value = "Submit";
+                } else {
+                    document.getElementById('submit').disabled = true;
+                    document.getElementById('submit').value = "Invalid BGG ID";
+                }
+            };
+        </script>
+        <!--
+        <script type="text/javascript">
+            function getGames(theForm) {
+                $.ajax({ // create an AJAX call...
+                    data: $(theForm).serialize(), // get the form data
+                    type: $(theForm).attr('method'), // GET or POST
+                    url: $(theForm).attr('action'), // the file to call
+                    success: function (response) { // on success..
+                        $('#similar_games').text(JSON.stringify(JSON.parse(response);
+                    }
+                });
+            }
+        </script>
+        -->
+    </body>
+</html>

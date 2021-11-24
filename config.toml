@@ -1,0 +1,74 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Brenton Mallen'
+theme = 'hugo-coder'
+defaultcontentlanguage = "en"
+
+paginate = 10
+
+[params]
+  author = "Brenton Mallen"
+  info = "Machine Learning Engineer"
+  avatarURL = "images/avatar.jpeg"
+  favicon_32 = "images/favicon-32x32.png"
+  favicon_16 = "images/favicon-16x16.png"
+  colorScheme = "auto"
+  since = "2015"
+
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/brentonmallen1"
+
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 3
+  url = "https://www.linkedin.com/in/brentonmallen/"
+
+[[params.social]]
+  name = "Twitter"
+  icon = "fa fa-twitter fa-2x"
+  weight = 3
+  url = "https://twitter.com/BrentonMallen"
+
+[[params.social]]
+  name = "Instagram"
+  icon = "fa fa-instagram fa-2x"
+  weight = 3
+  url = "https://www.instagram.com/brentonmallen/"
+
+[[params.social]]
+  name = "Email"
+  icon = "fa fa-envelope fa-2x"
+  weight = 3
+  url = "mailto:brenton@mallen.us"
+
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url = "posts/"
+
+[[menu.main]]
+  name = "Projects"
+  weight = 2
+  url = "projects"
+
+[[menu.main]]
+  name = "Resume"
+  weight = 3
+  url = "about/resume"
+
+[[menu.main]]
+  name = "Publications"
+  weight = 4
+  url = "publications/pubs_and_pres"
+
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
