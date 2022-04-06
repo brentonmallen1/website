@@ -14,7 +14,6 @@ paginate = 10
   favicon_16 = "images/favicon-16x16.png"
   colorScheme = "auto"
   since = "2015"
-  googleAnalytics = "UA-125260922-1"
 
 [[params.social]]
   name = "Github"
@@ -73,3 +72,5 @@ paginate = 10
   tag = "tags"
   author = "authors"
 
+[params.googleTagManager]
+    id = "G-9QF85MHBL7"
