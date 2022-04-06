@@ -1,8 +1,9 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://brentonmallen.com/'
 languageCode = 'en-us'
 title = 'Brenton Mallen'
 theme = 'hugo-coder'
 defaultcontentlanguage = "en"
+googleAnalytics = "G-9QF85MHBL7"
 
 paginate = 10
 
@@ -71,6 +72,3 @@ paginate = 10
   series = "series"
   tag = "tags"
   author = "authors"
-
-[params.googleTagManager]
-    id = "G-9QF85MHBL7"
