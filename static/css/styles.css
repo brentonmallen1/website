@@ -35,15 +35,39 @@ nav {
 }
 
 
-/* Light mode */
-@media (prefers-color-scheme: light) {
-  .navigation-title img {
-  }
+/* LOGO HANDLING FOR LIGHT AND DARK MODES */
+.logo {
+  display: none;
 }
 
-/* Dark mode */
+#logo-light {
+  display: inline;
+}
+
+body.colorscheme-dark #logo-light {
+  display: none;
+}
+
+body.colorscheme-dark #logo-dark {
+  display: inline;
+}
+
 @media (prefers-color-scheme: dark) {
-  .navigation-title img {
+  body:not(.colorscheme-dark) #logo-light {
+    display: none;
+  }
+
+  body:not(.colorscheme-dark) #logo-dark {
+    display: inline;
   }
 }
 
+@media (prefers-color-scheme: light) {
+  body:not(.colorscheme-dark) #logo-light {
+    display: inline;
+  }
+
+  body:not(.colorscheme-dark) #logo-dark {
+    display: none;
+  }
+}
