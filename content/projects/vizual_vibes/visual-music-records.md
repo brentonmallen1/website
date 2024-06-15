@@ -40,7 +40,7 @@ The immediate challenge I faced was **_how in the world do I go about converting
 Furthermore, music is dynamic. Trying to figure out ways to capture the dynamic essence of each song is _instrumental_
 (_I see what I did there_) in being able to convey its personality through a different medium.
 So, I started to think about what goes into making a song its own, and which of those has the potential
-to aid me on this _journey_ (_don't stop, beleav..._). I landed on three main musical attributes and a vision of their
+to aid me on this _journey_ (_don't stop, believ..._). I landed on three main musical attributes and a vision of their
 influence on the final product.
 
 The **tempo** of a song can set the mood of a song, so I decided to use it to influence the underlying hue of each song. Think
