@@ -15,6 +15,7 @@
     <meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}">
     <meta name="keywords" content="{{ (delimit .Keywords ",") | default .Site.Params.keywords }}">
 
+
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
 
@@ -26,7 +27,7 @@
 
     <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
 
-    {{ if .Site.IsServer }}
+    {{ if hugo.IsServer }}
       {{ $cssOpts := (dict "targetPath" "css/coder.css" "enableSourceMap" true ) }}
       {{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
@@ -37,7 +38,7 @@
     {{ end }}
 
     {{ if .Site.Params.rtl }}
-      {{ if .Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $cssOpts := (dict "targetPath" "css/coder-rtl.css" "enableSourceMap" true ) }}
         {{ $styles := resources.Get "scss/coder-rtl.scss" | resources.ExecuteAsTemplate "style.coder-rtl.css" . | toCSS $cssOpts }}
         <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
@@ -49,7 +50,7 @@
     {{ end }}
 
     {{ if  or (eq .Site.Params.colorScheme "auto") (eq .Site.Params.colorScheme "dark") }}
-      {{ if .Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $cssOpts := (dict "targetPath" "css/coder-dark.css" "enableSourceMap" true ) }}
         {{ $styles := resources.Get "scss/coder-dark.scss" | resources.ExecuteAsTemplate "style.coder-dark.css" . | toCSS $cssOpts }}
         <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
@@ -61,7 +62,7 @@
     {{ end }}
 
     {{ range .Site.Params.customCSS }}
-      {{ if $.Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $styles := resources.Get . }}
         <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
       {{ else }}
@@ -72,7 +73,7 @@
 
     {{ range .Site.Params.customSCSS }}
       {{/* We don't change the targetPath to because it's transparent to users */}}
-      {{ if $.Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $cssOpts := (dict "enableSourceMap" true ) }}
         {{ $styles := resources.Get . | toCSS $cssOpts }}
         <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
@@ -82,8 +83,8 @@
       {{ end }}
     {{ end }}
 
-    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32x32.png" | relURL }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16x16.png" | relURL }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/logos/favicon-32x32.png" | relURL }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/logos/favicon-16x16.png" | relURL }}" sizes="16x16">
 
     <link rel="apple-touch-icon" href="{{ .Site.Params.touchicon | default "/images/apple-touch-icon.png" | relURL }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.touchicon | default "/images/apple-touch-icon.png" | relURL }}">
@@ -101,6 +102,7 @@
   {{ else if eq .Site.Params.colorScheme "auto" }}
     {{ $csClass = "colorscheme-auto" }}
   {{ end }}
+
   <body class="preload-transitions {{ $csClass }}{{ if .Site.Params.rtl }} rtl{{ end }}">
     {{ partial "float" . }}
     <main class="wrapper">
@@ -113,7 +115,7 @@
       {{ partial "footer.html" . }}
     </main>
 
-    {{ if .Site.IsServer }}
+    {{ if hugo.IsServer }}
       {{ $script := resources.Get "js/coder.js" }}
       <script src="{{ $script.RelPermalink }}"></script>
     {{ else }}
@@ -122,7 +124,7 @@
     {{ end }}
 
     {{ range .Site.Params.customJS }}
-      {{ if $.Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $script := resources.Get . }}
         <script src="{{ $script.RelPermalink }}"></script>
       {{ else }}

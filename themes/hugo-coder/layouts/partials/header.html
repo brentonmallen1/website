@@ -1,8 +1,20 @@
+<link rel="stylesheet" href="/css/styles.css">
 <nav class="navigation">
   <section class="container">
+<!--    <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">-->
+<!--      {{ .Site.Title }}-->
+<!--    </a>-->
     <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">
+    {{ if .Site.Params.titleImage }}
+      <picture>
+      <source srcset="{{ .Site.Params.faviconSVGLight | relURL }}" media="(prefers-color-scheme: light)">
+      <source srcset="{{ .Site.Params.faviconSVGDark | relURL }}" media="(prefers-color-scheme: dark)">
+      <img src="{{ .Site.Params.faviconSVG | relURL }}" alt="{{ .Site.Title }}">
+    </picture>
+    {{ else }}
       {{ .Site.Title }}
-    </a>
+    {{ end }}
+  </a>
     {{ if or .Site.Menus.main .Site.IsMultiLingual }}
       <input type="checkbox" id="menu-toggle" />
       <label class="menu-button float-right" for="menu-toggle">

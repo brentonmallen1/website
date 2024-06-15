@@ -1,0 +1,49 @@
+.navigation-title {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Ensure the text is not underlined */
+  margin-right: auto; /* Push the nav items to the right */
+  vertical-align: middle;
+}
+
+.navigation-title picture,
+.navigation-title img {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  image-rendering: crisp-edges
+}
+
+/* Flexbox properties to align the nav items */
+nav {
+  display: flex;
+  vertical-align: middle;
+}
+
+.navigation .container {
+  display: flex;
+  vertical-align: middle;
+}
+
+.navigation .navigation-list {
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.center {
+    text-align: center;
+}
+
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .navigation-title img {
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .navigation-title img {
+  }
+}
+

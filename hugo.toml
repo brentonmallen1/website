@@ -10,11 +10,13 @@ paginate = 10
 [params]
   author = "Brenton Mallen"
   info = "Machine Learning Engineer"
-  avatarURL = "images/avatar.jpeg"
-  favicon_32 = "images/favicon-32x32.png"
-  favicon_16 = "images/favicon-16x16.png"
+  avatarURL = "images/avatar/avatar.jpeg"
+  faviconSVG = "images/logos/logo.svg"
+  faviconSVGLight = "images/logos/logo.svg"
+  faviconSVGDark = "images/logos/logo-dark.svg"
   colorScheme = "auto"
   since = "2015"
+  titleImage = "images/logos/logo.svg"
 
 [[params.social]]
   name = "Github"
@@ -27,12 +29,6 @@ paginate = 10
   icon = "fa fa-linkedin fa-2x"
   weight = 3
   url = "https://www.linkedin.com/in/brentonmallen/"
-
-[[params.social]]
-  name = "Twitter"
-  icon = "fa fa-twitter fa-2x"
-  weight = 3
-  url = "https://twitter.com/BrentonMallen"
 
 [[params.social]]
   name = "Instagram"
