@@ -6,11 +6,8 @@
 <!--    </a>-->
     <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">
     {{ if .Site.Params.titleImage }}
-      <picture>
-      <source srcset="{{ .Site.Params.faviconSVGLight | relURL }}" media="(prefers-color-scheme: light)">
-      <source srcset="{{ .Site.Params.faviconSVGDark | relURL }}" media="(prefers-color-scheme: dark)">
-      <img src="{{ .Site.Params.faviconSVG | relURL }}" alt="{{ .Site.Title }}">
-    </picture>
+        <img id="logo-light" src="{{ .Site.Params.faviconSVGLight | relURL }}" alt="{{ .Site.Title }}" class="logo">
+        <img id="logo-dark" src="{{ .Site.Params.faviconSVGDark | relURL }}" alt="{{ .Site.Title }}" class="logo">
     {{ else }}
       {{ .Site.Title }}
     {{ end }}

@@ -110,3 +110,4 @@ cache
 .doit.db.db
 *.DS_Store
 /public/
+/resources/
