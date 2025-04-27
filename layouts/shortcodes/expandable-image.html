@@ -1,0 +1,48 @@
+<div style="position: relative; display: flex; justify-content: center; align-items: center;">
+    <img src="{{ .Get "src" }}" width="75%"
+         style="transition: transform 0.2s, opacity 0.2s; cursor: pointer;"
+         onclick="this.style.transform = this.style.transform === 'scale(1.75)' ? 'scale(1)' : 'scale(1.75)';
+                  this.nextElementSibling.style.opacity = this.style.transform === 'scale(1.75)' ? '0' : '0.8';">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-plus-circle" viewBox="0 0 16 16"
+         style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.5; transition: opacity 0.2s; pointer-events: none;">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+    </svg>
+</div>
+
+<!--<div id="image-container" style="position: relative; display: flex; justify-content: center; align-items: center;">-->
+<!--    <img id="expandable-image" src="{{ .Get "src" }}" width="75%"-->
+<!--         style="transition: transform 0.2s, opacity 0.2s; cursor: pointer;"-->
+<!--         onclick="toggleImage(this);">-->
+<!--    <svg id="overlay-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-plus-circle" viewBox="0 0 16 16"-->
+<!--         style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.5; transition: opacity 0.2s; pointer-events: none;">-->
+<!--        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>-->
+<!--        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>-->
+<!--    </svg>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    function toggleImage(img) {-->
+<!--        const svg = document.getElementById('overlay-icon');-->
+<!--        const expanded = img.style.transform === 'scale(1.5)';-->
+
+<!--        if (expanded) {-->
+<!--            img.style.transform = 'scale(1)';-->
+<!--            svg.style.opacity = '0.5';-->
+<!--        } else {-->
+<!--            img.style.transform = 'scale(1.5)';-->
+<!--            svg.style.opacity = '0';-->
+<!--        }-->
+<!--    }-->
+
+<!--    document.addEventListener('click', function(event) {-->
+<!--        const img = document.getElementById('expandable-image');-->
+<!--        const svg = document.getElementById('overlay-icon');-->
+<!--        const container = document.getElementById('image-container');-->
+
+<!--        if (!container.contains(event.target)) {-->
+<!--            img.style.transform = 'scale(1)';-->
+<!--            svg.style.opacity = '0.5';-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->

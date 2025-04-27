@@ -5,7 +5,8 @@ theme = 'hugo-coder'
 defaultcontentlanguage = "en"
 googleAnalytics = "G-9QF85MHBL7"
 
-paginate = 10
+[pagination]
+  pagerSize = 10
 
 [params]
   author = "Brenton Mallen"
@@ -30,11 +31,12 @@ paginate = 10
   weight = 3
   url = "https://www.linkedin.com/in/brentonmallen/"
 
-[[params.social]]
-  name = "Instagram"
-  icon = "fa fa-instagram fa-2x"
-  weight = 3
-  url = "https://www.instagram.com/brentonmallen/"
+# TODO: replace with cheverto or pixelfed
+#[[params.social]]
+#  name = "Instagram"
+#  icon = "fa fa-instagram fa-2x"
+#  weight = 3
+#  url = "https://www.instagram.com/brentonmallen/"
 
 [[params.social]]
   name = "Email"
@@ -68,3 +70,65 @@ paginate = 10
   series = "series"
   tag = "tags"
   author = "authors"
+
+
+[markup]
+  [markup.goldmark]
+    duplicateResourceFiles = false
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      [markup.goldmark.extensions.cjk]
+        eastAsianLineBreaks = false
+        eastAsianLineBreaksStyle = 'simple'
+        enable = false
+        escapedSpace = false
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.delete]
+          enable = false
+        [markup.goldmark.extensions.extras.insert]
+          enable = false
+        [markup.goldmark.extensions.extras.mark]
+          enable = false
+        [markup.goldmark.extensions.extras.subscript]
+          enable = false
+        [markup.goldmark.extensions.extras.superscript]
+          enable = false
+      [markup.goldmark.extensions.passthrough]
+        enable = false
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = []
+          inline = []
+      [markup.goldmark.extensions.typographer]
+        apostrophe = '&rsquo;'
+        disable = false
+        ellipsis = '&hellip;'
+        emDash = '&mdash;'
+        enDash = '&ndash;'
+        leftAngleQuote = '&laquo;'
+        leftDoubleQuote = '&ldquo;'
+        leftSingleQuote = '&lsquo;'
+        rightAngleQuote = '&raquo;'
+        rightDoubleQuote = '&rdquo;'
+        rightSingleQuote = '&rsquo;'
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      wrapStandAloneImageWithinParagraph = true
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.image]
+        enableDefault = false
+      [markup.goldmark.renderHooks.link]
+        enableDefault = false
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
