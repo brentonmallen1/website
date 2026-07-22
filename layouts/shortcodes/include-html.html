@@ -1,4 +1,6 @@
 {{ $file := .Get 0 }}
-{{ (printf "%s%s" .Page.File.Dir $file) | readFile | safeHTML }}
+{{ with resources.Get (printf "html/%s" $file) }}
+  {{ .Content | safeHTML }}
+{{ end }}
 <!-- Ensure font awesome icons are rendered -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />

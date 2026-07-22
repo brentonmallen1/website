@@ -111,3 +111,6 @@ cache
 *.DS_Store
 /public/
 /resources/
+wip/
+
+.history
